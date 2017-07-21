@@ -42,6 +42,10 @@ class Destino
      */
     private $precio;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Horario", mappedBy="destino")
+     */
+    private $horario;
 
     /**
      * Get id
@@ -125,4 +129,3 @@ class Destino
         return $this->precio;
     }
 }
-

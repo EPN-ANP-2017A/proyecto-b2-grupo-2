@@ -195,4 +195,69 @@ class Bus
     {
         return $this->nomAyudante;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->horario = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add horario
+     *
+     * @param \AppBundle\Entity\Horario $horario
+     *
+     * @return Bus
+     */
+    public function addHorario(\AppBundle\Entity\Horario $horario)
+    {
+        $this->horario[] = $horario;
+
+        return $this;
+    }
+
+    /**
+     * Remove horario
+     *
+     * @param \AppBundle\Entity\Horario $horario
+     */
+    public function removeHorario(\AppBundle\Entity\Horario $horario)
+    {
+        $this->horario->removeElement($horario);
+    }
+
+    /**
+     * Get horario
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getHorario()
+    {
+        return $this->horario;
+    }
+
+    /**
+     * Set cooperativa
+     *
+     * @param \AppBundle\Entity\Cooperativa $cooperativa
+     *
+     * @return Bus
+     */
+    public function setCooperativa(\AppBundle\Entity\Cooperativa $cooperativa = null)
+    {
+        $this->cooperativa = $cooperativa;
+
+        return $this;
+    }
+
+    /**
+     * Get cooperativa
+     *
+     * @return \AppBundle\Entity\Cooperativa
+     */
+    public function getCooperativa()
+    {
+        return $this->cooperativa;
+    }
 }

@@ -56,7 +56,16 @@ class Bus
      */
     private $nomAyudante;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Horario", mappedBy="bus")
+     */
+    private $horario;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Cooperativa", inversedBy="bus")
+     * @ORM\JoinColumn(name="cooperativa_id", referencedColumnName="id")
+     */
+    private $cooperativa;
     /**
      * Get id
      *
@@ -187,4 +196,3 @@ class Bus
         return $this->nomAyudante;
     }
 }
-

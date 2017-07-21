@@ -35,6 +35,10 @@ class Cooperativa
      */
     private $rucCoop;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Bus", mappedBy="cooperativa")
+     */
+    private $bus;
 
     /**
      * Get id
@@ -94,4 +98,3 @@ class Cooperativa
         return $this->rucCoop;
     }
 }
-

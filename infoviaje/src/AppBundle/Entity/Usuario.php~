@@ -72,6 +72,15 @@ class Usuario
 
 
     /**
+     * @ORM\OneToMany(targetEntity="Rol", mappedBy="usuario")
+     */
+    private $rol;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Reserva", mappedBy="usuario")
+     */
+    private $reserva;
+    /**
      * Get id
      *
      * @return int
@@ -249,4 +258,3 @@ class Usuario
         return $this->clave;
     }
 }
-

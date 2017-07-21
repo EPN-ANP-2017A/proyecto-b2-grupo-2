@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Bus</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bus.id }}</td>
+            </tr>
+            <tr>
+                <th>Matricula</th>
+                <td>{{ bus.matricula }}</td>
+            </tr>
+            <tr>
+                <th>Capacidad</th>
+                <td>{{ bus.capacidad }}</td>
+            </tr>
+            <tr>
+                <th>Descripcionbus</th>
+                <td>{{ bus.descripcionBus }}</td>
+            </tr>
+            <tr>
+                <th>Nomchofer</th>
+                <td>{{ bus.nomChofer }}</td>
+            </tr>
+            <tr>
+                <th>Nomayudante</th>
+                <td>{{ bus.nomAyudante }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('bus_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('bus_edit', { 'id': bus.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

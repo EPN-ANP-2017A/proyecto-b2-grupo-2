@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="main container">
+        <div class="row well">
+            <div class="cold-md-6">
+                <div class="page-header">
+                    <h1>Bus creation</h1>
+                </div>
+
+                {{ form_start(form, {'attr' : {'role' : 'form'}}) }}
+
+                <div class="form-group">
+                    {{ form_label(form.matricula) }}
+                    {{ form_widget(form.matricula, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Your matricula'} }) }}
+                    <span class="text-danger">{{ form_errors(form.matricula) }}</span>
+
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.capacidad) }}
+                    {{ form_widget(form.capacidad, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Your capacidad'} }) }}
+                    <span class="text-danger">{{ form_errors(form.capacidad) }}</span>
+
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.descripcionBus) }}
+                    {{ form_widget(form.descripcionBus, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Your descripcionBus'} }) }}
+                    <span class="text-danger">{{ form_errors(form.descripcionBus) }}</span>
+
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.nomChofer) }}
+                    {{ form_widget(form.nomChofer, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Your nomChofer'} }) }}
+                    <span class="text-danger">{{ form_errors(form.nomChofer) }}</span>
+
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.nomAyudante) }}
+                    {{ form_widget(form.nomAyudante, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Your nomAyudante'} }) }}
+                    <span class="text-danger">{{ form_errors(form.nomAyudante) }}</span>
+
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.cooperativa) }}
+                    {{ form_widget(form.cooperativa, { 'attr' : {'class' : 'form-control', 'placeholder' : 'Your cooperativa'} }) }}
+                    <span class="text-danger">{{ form_errors(form.cooperativa) }}</span>
+
+                </div>
+
+                <input type="submit" value="Create" />
+                {{ form_end(form) }}
+
+                <ul>
+                    <li>
+                        <a href="{{ path('bus_index') }}">Back to the list</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

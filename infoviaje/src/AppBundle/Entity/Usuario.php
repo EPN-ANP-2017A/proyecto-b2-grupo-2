@@ -257,4 +257,80 @@ class Usuario
     {
         return $this->clave;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->rol = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->reserva = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add rol
+     *
+     * @param \AppBundle\Entity\Rol $rol
+     *
+     * @return Usuario
+     */
+    public function addRol(\AppBundle\Entity\Rol $rol)
+    {
+        $this->rol[] = $rol;
+
+        return $this;
+    }
+
+    /**
+     * Remove rol
+     *
+     * @param \AppBundle\Entity\Rol $rol
+     */
+    public function removeRol(\AppBundle\Entity\Rol $rol)
+    {
+        $this->rol->removeElement($rol);
+    }
+
+    /**
+     * Get rol
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRol()
+    {
+        return $this->rol;
+    }
+
+    /**
+     * Add reserva
+     *
+     * @param \AppBundle\Entity\Reserva $reserva
+     *
+     * @return Usuario
+     */
+    public function addReserva(\AppBundle\Entity\Reserva $reserva)
+    {
+        $this->reserva[] = $reserva;
+
+        return $this;
+    }
+
+    /**
+     * Remove reserva
+     *
+     * @param \AppBundle\Entity\Reserva $reserva
+     */
+    public function removeReserva(\AppBundle\Entity\Reserva $reserva)
+    {
+        $this->reserva->removeElement($reserva);
+    }
+
+    /**
+     * Get reserva
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getReserva()
+    {
+        return $this->reserva;
+    }
 }

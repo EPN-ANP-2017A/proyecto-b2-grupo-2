@@ -97,4 +97,45 @@ class Cooperativa
     {
         return $this->rucCoop;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->bus = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add bus
+     *
+     * @param \AppBundle\Entity\Bus $bus
+     *
+     * @return Cooperativa
+     */
+    public function addBus(\AppBundle\Entity\Bus $bus)
+    {
+        $this->bus[] = $bus;
+
+        return $this;
+    }
+
+    /**
+     * Remove bus
+     *
+     * @param \AppBundle\Entity\Bus $bus
+     */
+    public function removeBus(\AppBundle\Entity\Bus $bus)
+    {
+        $this->bus->removeElement($bus);
+    }
+
+    /**
+     * Get bus
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getBus()
+    {
+        return $this->bus;
+    }
 }

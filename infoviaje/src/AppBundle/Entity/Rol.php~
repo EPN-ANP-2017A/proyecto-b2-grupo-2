@@ -28,6 +28,10 @@ class Rol
      */
     private $descripcion;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Usuario", mappedBy="rol")
+     */
+    private $usuario;
 
     /**
      * Get id
@@ -63,4 +67,3 @@ class Rol
         return $this->descripcion;
     }
 }
-
