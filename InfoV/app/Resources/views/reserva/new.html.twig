@@ -1,0 +1,27 @@
+{% extends 'menu.html.twig' %}
+
+{% block title %}Infoviajes{% endblock %}
+
+{% block body %}
+	
+    {{ parent() }}
+    <div class="container">
+    <div class="cold-md-12">
+        <h1>Registro reserva</h1>
+    <h3>Nombre: {{ idUser.nombre }}</h3>
+    <h3>Hora: 
+    	{% if horario.horaSalida  %}
+                    {{ horario.horaSalida|date('H:i:s') }}
+                {% endif %}
+    </h3>
+   {{ form_start(form) }}
+
+        {{ form_widget(form) }}
+        <input type="submit" value="Reservar" />
+    {{ form_end(form) }}
+
+  </div>
+    </div>
+
+{% endblock %}
+

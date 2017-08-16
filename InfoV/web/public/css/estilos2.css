@@ -1,0 +1,125 @@
+body{
+    
+}
+
+nav.navbar {
+    padding-bottom: 0;
+}
+
+nav.navbar>.row{
+    width: 100%;
+    font-size: 20px;
+    background-color: white;
+}
+
+#contactos {
+    font-size: 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+#sociales {
+    font-size: 30px;
+}
+
+#sociales i {
+    margin-left: 50px;
+    margin-right: 10px;
+}
+
+#menu-principal {
+    background-color: #174a41;
+    max-height: 30px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+#menu-principal a {
+    color: #ffffff;
+}
+
+#menu-principal #contenedor-reservaciones {
+    margin-left: 30px;
+}
+#menu-principal #link-reservaciones {
+    background-color: #c3922e;
+}
+
+.arrow-down {
+    width: 0px;
+    height: 0px;
+    border-left: 71px solid transparent;
+    border-right: 70px solid transparent;
+    border-top: 20px solid #c3922e;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+#slider-principal img{
+    max-height: 500px;
+}
+
+
+#intro {
+    margin-top: -60px;
+}
+
+#intro h2 {
+    background-color: #174a41;
+    padding: 25px 15px;
+    color: #ffffff;
+}
+
+#intro .text {
+    background-color: #ffffff;
+    font-size: 12px;
+    padding: 25px;
+}
+
+#servicios .nav-tabs a{
+    color: #000000;
+    text-transform: uppercase;
+}
+
+#servicios .nav-tabs a span{
+    border-bottom: 3px solid #c3922e;
+    padding: 5px;
+}
+
+#logo{
+    height: 120px;
+}
+
+.cont{
+    height: 500px;
+    width: 330px;
+    background-color: black;
+}
+
+.cont h1{
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+.contenedor2 .centro{
+    margin-top: 30px;
+}
+.contenedor_carrito .tablita{
+    margin-left: 30px;
+    margin: 30px;
+    margin-top: 30px;
+}
+.contenedor2 .contenedor_politicas .politicas .imagenperrito{
+    height: 300px;
+    width: 500px;
+    margin-top: 30px;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+}

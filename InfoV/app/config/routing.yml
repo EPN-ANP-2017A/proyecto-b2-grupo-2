@@ -1,0 +1,23 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
+reserva_inicio:
+    path:     /inicio
+    defaults: { _controller: AppBundle:Reserva:inicio }
+
+bus_buses:
+    path:     /buses
+    defaults: { _controller: AppBundle:Bus:buses }
+
+destino_destinos:
+    path:     /destinos
+    defaults: { _controller: AppBundle:Destino:destinos }
+
+default_mision:
+    path:     /mision
+    defaults: { _controller: AppBundle:Default:mision }

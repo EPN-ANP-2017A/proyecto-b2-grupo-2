@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Infoviajes{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Parisienne" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('public/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/css/normalize.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+<div class="container">
+    <!--Logo, menú -->
+    <div class="row" id="menu">
+        <div class=" col col-lg-3 col-md-3 col-sm-12">
+            <a href="{{ asset('/inicio') }}"><img class="logo" src="{{ asset('public/images/logoInfo.png') }}" alt="logo infoviajes"></a>
+        </div>
+        <div class="col col-lg-9 col-md-9 col-sm-12" id="pestanas">
+            <ul class="nav nav-pills">
+                <li role="presentation" ><a href="{{ asset('/inicio') }}">Inicio</a></li>
+                <li role="presentation" ><a href="{{ path('default_mision') }}">Quienes somos</a></li>
+                
+                {% if is_granted("ROLE_ADMIN") %}
+                <li role="presentation" ><a href="{{ asset('/inicio') }}">Reserva</a></li>
+                <li role="presentation" ><a href="{{ path('cooperativa_index') }}">Cooperativa</a></li>
+                <li role="presentation" ><a href="{{ path('destino_index') }}">Destino</a></li>
+                <li role="presentation" ><a href="{{ path('bus_index') }}">Bus</a></li>
+                <li role="presentation" ><a href="{{ path('horario_index') }}">Horario</a></li>
+                <li role="presentation" ><a href="#">Contáctanos</a></li>
+                {% endif%}
+
+                    <li><div id="sociales">
+                            <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </div></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('public/js/jquery-3.2.1.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="{{ asset('public/js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('public/js/localization/messages_es.js') }}"></script>
+    <script src="{{ asset('public/js/additional-methods.min.js') }}"></script>
+    <script src="{{ asset('public/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('public/js/script.js') }}"></script>
+    <script src="{{ asset('public/js/main.js') }}"></script>
+    <script src="{{ asset('public/js/index.js') }}"></script>
+{% endblock %}
+</body>
+</html>

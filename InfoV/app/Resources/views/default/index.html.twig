@@ -1,0 +1,41 @@
+{% extends 'menu.html.twig' %}
+
+{# Modal ver include para añadir otro twig#}
+{% block title %}Infoviajes{% endblock %}
+
+{% block body %}
+{{ parent() }}
+<div class="container">
+
+
+
+                <br><br>
+
+        <div class="jumbotron">
+            <h1>Bienvenido!</h1>
+            <p >Infoviajes es it is a long established fact that a reader will be distracted by the readable
+                content of a page when looking at its layout. 
+                The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+            <p id="abc"><a class="btn btn-primary btn-lg" href="{{ asset('/login') }}" role="button">Inicia sesión</a></p>
+        </div>
+
+            <footer>
+                {% block footer %}
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8 text-white">
+                                <p><strong>Infoviajes</strong> Copyright: © 2017. Todos los derechos reservados.</p>
+                            </div>
+                            <div class="col-4" id="sociales">
+                                <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endblock %}
+            </footer>
+            </div>
+        </div>
+    </div>
+{% endblock %}

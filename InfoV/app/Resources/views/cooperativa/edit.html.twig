@@ -1,0 +1,28 @@
+{% extends 'menu.html.twig' %}
+
+{% block title %}Infoviajes{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+<div class="container">
+    <div class="cold-md-12">
+        <div class="page-header margin-none">
+            <h1>Editar Cooperativa</h1>
+        </div>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('cooperativa_index') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

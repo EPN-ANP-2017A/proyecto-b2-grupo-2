@@ -1,0 +1,58 @@
+
+{% extends 'menu.html.twig' %}
+
+{% block title %}Infoviajes{% endblock %}
+
+{% block body %}
+{{ parent() }}
+<div class="container">
+    <div class="cold-md-12">
+        <div class="page-header margin-none">
+            <h1>Escoge tu destino!</h1>
+        </div>
+        <div class="input-append">
+                <input type="text" id="search">
+                <input type="submit" value="Buscar" class="btn" id="busq">
+
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Destino</th>
+                <th>Precio</th>
+                <th>Tiempo viaje</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for des in destinos %}
+            <tr>
+                <td>{{ des.lugarDestino }}</td>
+                <td>{{ des.precioDestino }}</td>
+                <td>{{ des.tiempoDestino }}</td>
+                <!-- El path es el definido en el routing.yml-->
+                <td><a href="{{ path('bus_buses', {'id': des.id} )  }}">Seleccionar</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+            <footer>
+                {% block footer %}
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8 text-white">
+                                <p><strong>Infoviajes</strong> Copyright: © 2017. Todos los derechos reservados.</p>
+                                <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endblock %}
+            </footer>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
